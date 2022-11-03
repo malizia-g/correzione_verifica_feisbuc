@@ -23,16 +23,20 @@ export class FooComponent {
      this.data = new Object(d);
      this.loading = false;
    }
-   //Nota bene, questo è un metodo alternativo e compatto per fare la stessa cosa di 
-   //makeRequest senza dichiarare la variabile Observable e creando l’arrow function   
-   //direttamente dentro il metodo subscribe
+
    makeCompactRequest(): void {
-     this.loading = true;
-     this.http
-       .get('https://jsonplaceholder.typicode.com/posts/1')
-       .subscribe(newData => {
-       this.data = newData;
-       this.loading = false;
+    this.loading = true;
+    this.http
+      .post('https://jsonplaceholder.typicode.com/posts',
+        JSON.stringify({
+          body: 'bar',
+          title: 'foo',
+          userId: 1
+        })
+      )
+      .subscribe(data => {
+        this.data = data;
+        this.loading = false;
        });
       }
 }
