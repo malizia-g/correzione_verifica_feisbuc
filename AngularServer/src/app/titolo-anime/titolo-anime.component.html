@@ -1,0 +1,9 @@
+<div class="container-fluid">
+    <input #box (keydown)="onKey(box.value)" class="form-control mt-3 mb-3">
+    <p *ngIf="loading">LOADING...</p>
+    <ul>
+        <li *ngFor="let title of titolo">
+            {{title.nome}} // {{title.generi}}
+        </li>
+    </ul>
+</div>
