@@ -21,11 +21,23 @@ def home():
 def tipoRiceraAnime():
     return render_template('tipoRiceraAnime.html')
 
-#ricerca tramite titolo
-@app.route('/tramiteTitolo', methods=['GET'])
-def tramiteTitolo():
+#ricerca tramite titolo anime
+@app.route('/titoloAnime', methods=['GET'])
+def titoloAnime():
     data = request.args.get("titolo")
     q = 'SELECT * FROM anime WHERE nome LIKE %(t)s' 
+    cursor = conn.cursor(as_dict=True)
+    p = {"t": f"%{data}%"}
+    cursor.execute(q, p)
+    data = cursor.fetchall()
+
+    return jsonify(data)
+
+#ricerca tramite titolo manga
+@app.route('/titoloManga', methods=['GET'])
+def titoloManga():
+    data = request.args.get("titolo")
+    q = 'SELECT * FROM manga WHERE nome LIKE %(t)s' 
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
     cursor.execute(q, p)

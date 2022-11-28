@@ -12,6 +12,7 @@ import { GenereMangaComponent } from './genere-manga/genere-manga.component';
 import { RisultatoAnimeComponent } from './risultato-anime/risultato-anime.component';
 import { RisultatoMangaComponent } from './risultato-manga/risultato-manga.component';
 import { AppRoutingModule } from './app-routing.module';
+import { TitoloMangaComponent } from './titolo-manga/titolo-manga.component';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { AppRoutingModule } from './app-routing.module';
     GenereMangaComponent,
     RisultatoAnimeComponent,
     RisultatoMangaComponent,
+    TitoloMangaComponent,
 
   ],
   imports: [

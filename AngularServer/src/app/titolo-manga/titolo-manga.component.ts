@@ -2,14 +2,14 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
 @Component({
-  selector: 'app-titolo-anime',
-  templateUrl: './titolo-anime.component.html',
-  styleUrls: ['./titolo-anime.component.css']
+  selector: 'app-titolo-manga',
+  templateUrl: './titolo-manga.component.html',
+  styleUrls: ['./titolo-manga.component.css']
 })
-export class TitoloAnimeComponent {
+export class TitoloMangaComponent {
   titolo!: any;
   loading!: Boolean;
-  url: string = "https://3000-navarette-sitoflaskanug-70r4kgp3ra7.ws-eu77.gitpod.io/titoloAnime";
+  url: string = "https://3000-navarette-sitoflaskanug-70r4kgp3ra7.ws-eu77.gitpod.io/titoloManga";
 
   constructor(public http: HttpClient) {
     this.get(this.url);
