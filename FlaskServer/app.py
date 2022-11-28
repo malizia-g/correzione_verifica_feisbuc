@@ -6,7 +6,7 @@ import matplotlib.pyplot as plt
 from flask_cors import CORS
 
 
-# pip install flask geopandas matplotlib contextily pandas folium pymssql
+# pip install flask geopandas matplotlib contextily pandas pymssql flask_cors
 conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',user='ghebrous.davide',password='xxx123##',database='ghebrous.davide')
 
 app = Flask(__name__)

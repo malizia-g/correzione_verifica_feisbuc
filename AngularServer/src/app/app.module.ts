@@ -8,7 +8,8 @@ import { TitoloAnimeComponent } from './titolo-anime/titolo-anime.component';
 @NgModule({
   declarations: [
     AppComponent,
-    TitoloAnimeComponent
+    TitoloAnimeComponent,
+
   ],
   imports: [
     BrowserModule,
