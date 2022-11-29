@@ -6,20 +6,23 @@ import matplotlib.pyplot as plt
 from flask_cors import CORS
 
 
-# pip install flask geopandas matplotlib contextily pandas pymssql flask_cors
+# pip install flask matplotlib pandas pymssql flask_cors
 conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',user='ghebrous.davide',password='xxx123##',database='ghebrous.davide')
 
 app = Flask(__name__)
 CORS(app)
-
 @app.route('/')
+def start():
+    return render_template('start.html')
+
+@app.route('/home')
 def home():
     return render_template('home.html')
 
 #pagina contenente i tipi di ricerca che si vuole utilizzare per gli anime   
-@app.route('/tipoRiceraAnime')
+@app.route('/tipoRicercaAnime')
 def tipoRiceraAnime():
-    return render_template('tipoRiceraAnime.html')
+    return render_template('tipoRicercaAnime.html')
 
 #ricerca tramite titolo anime
 @app.route('/titoloAnime', methods=['GET'])
@@ -45,9 +48,9 @@ def titoloManga():
 
     return jsonify(data)
 #pagina contenente i tipi di ricerca che si vuole utilizzare per i manga   
-@app.route('/tipoRiceraManga')
+@app.route('/tipoRicercaManga')
 def tipoRiceraManga():
-    return render_template('tipoRiceraManga.html')
+    return render_template('tipoRicercaManga.html')
 
 
 

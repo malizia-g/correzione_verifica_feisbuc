@@ -4,7 +4,6 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { TitoloAnimeComponent } from './titolo-anime/titolo-anime.component';
-import { SceltaComponent } from './scelta/scelta.component';
 import { TipoRicercaAnimeComponent } from './tipo-ricerca-anime/tipo-ricerca-anime.component';
 import { TipoRicercaMangaComponent } from './tipo-ricerca-manga/tipo-ricerca-manga.component';
 import { GenereAnimeComponent } from './genere-anime/genere-anime.component';
@@ -13,12 +12,16 @@ import { RisultatoAnimeComponent } from './risultato-anime/risultato-anime.compo
 import { RisultatoMangaComponent } from './risultato-manga/risultato-manga.component';
 import { AppRoutingModule } from './app-routing.module';
 import { TitoloMangaComponent } from './titolo-manga/titolo-manga.component';
+import { StartComponent } from './start/start.component';
+import { HomeComponent } from './home/home.component';
+import { RegisterComponent } from './register/register.component';
+import { LoginComponent } from './login/login.component';
+import { GenereRegisterComponent } from './genere-register/genere-register.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TitoloAnimeComponent,
-    SceltaComponent,
     TipoRicercaAnimeComponent,
     TipoRicercaMangaComponent,
     GenereAnimeComponent,
@@ -26,6 +29,11 @@ import { TitoloMangaComponent } from './titolo-manga/titolo-manga.component';
     RisultatoAnimeComponent,
     RisultatoMangaComponent,
     TitoloMangaComponent,
+    StartComponent,
+    HomeComponent,
+    RegisterComponent,
+    LoginComponent,
+    GenereRegisterComponent,
 
   ],
   imports: [

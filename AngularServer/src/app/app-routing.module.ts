@@ -1,25 +1,34 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { TitoloAnimeComponent } from './titolo-anime/titolo-anime.component';
-import { TitoloMangaComponent } from './titolo-manga/titolo-manga.component';
-import { SceltaComponent } from './scelta/scelta.component';
+import { StartComponent } from './start/start.component';
+import { HomeComponent } from './home/home.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 import { TipoRicercaAnimeComponent } from './tipo-ricerca-anime/tipo-ricerca-anime.component';
-import { TipoRicercaMangaComponent } from './tipo-ricerca-manga/tipo-ricerca-manga.component';
-import { RisultatoAnimeComponent } from './risultato-anime/risultato-anime.component';
-import { RisultatoMangaComponent } from './risultato-manga/risultato-manga.component';
+import { TitoloAnimeComponent } from './titolo-anime/titolo-anime.component';
 import { GenereAnimeComponent } from './genere-anime/genere-anime.component';
+import { RisultatoAnimeComponent } from './risultato-anime/risultato-anime.component';
+import { TipoRicercaMangaComponent } from './tipo-ricerca-manga/tipo-ricerca-manga.component';
+import { TitoloMangaComponent } from './titolo-manga/titolo-manga.component';
 import { GenereMangaComponent } from './genere-manga/genere-manga.component';
-GenereMangaComponent
+import { RisultatoMangaComponent } from './risultato-manga/risultato-manga.component';
+import { GenereRegisterComponent } from './genere-register/genere-register.component';
+
 export const routes: Routes = [
+  { path: 'Start', component: StartComponent },
+  { path: 'Home', component: HomeComponent },
+  { path: 'Login', component: LoginComponent },
+  { path: 'Register', component: RegisterComponent },
+  { path: 'GenereRegister', component: GenereRegisterComponent },
+  { path: 'TipoRicercaAnime', component: TipoRicercaAnimeComponent },
   { path: 'titolo-anime', component: TitoloAnimeComponent },
+  { path: 'GenereAnime', component: GenereAnimeComponent },
+  { path: 'RisultatoAnime', component: RisultatoAnimeComponent },
+  { path: 'TipoRicercaManga', component: TipoRicercaMangaComponent },
   { path: 'titolo-manga', component: TitoloMangaComponent },
-  { path: 'scelta', component: SceltaComponent },
-  { path: 'TipoRicercaAnimeComponent', component: TipoRicercaAnimeComponent },
-  { path: 'TipoRicercaMangaComponent', component: TipoRicercaMangaComponent },
-  { path: 'RisultatoAnimeComponent', component: RisultatoAnimeComponent },
-  { path: 'RisultatoMangaComponent', component: RisultatoMangaComponent },
-  { path: 'GenereAnimeComponent', component: GenereAnimeComponent },
-  { path: 'GenereMangaComponent', component: GenereMangaComponent }
+  { path: 'GenereManga', component: GenereMangaComponent },
+  { path: 'RisultatoManga', component: RisultatoMangaComponent },
+  
 ];
 
 @NgModule({
