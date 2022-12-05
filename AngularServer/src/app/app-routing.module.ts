@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
+
 import { StartComponent } from './start/start.component';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component';
@@ -17,15 +18,18 @@ import { GenereRegisterComponent } from './genere-register/genere-register.compo
 export const routes: Routes = [
   { path: 'Start', component: StartComponent },
   { path: 'Home', component: HomeComponent },
+
   { path: 'Login', component: LoginComponent },
   { path: 'Register', component: RegisterComponent },
   { path: 'GenereRegister', component: GenereRegisterComponent },
+
   { path: 'TipoRicercaAnime', component: TipoRicercaAnimeComponent },
-  { path: 'titolo-anime', component: TitoloAnimeComponent },
+  { path: 'TitoloAnime', component: TitoloAnimeComponent },
   { path: 'GenereAnime', component: GenereAnimeComponent },
   { path: 'RisultatoAnime', component: RisultatoAnimeComponent },
+  
   { path: 'TipoRicercaManga', component: TipoRicercaMangaComponent },
-  { path: 'titolo-manga', component: TitoloMangaComponent },
+  { path: 'TitoloManga', component: TitoloMangaComponent },
   { path: 'GenereManga', component: GenereMangaComponent },
   { path: 'RisultatoManga', component: RisultatoMangaComponent },
   

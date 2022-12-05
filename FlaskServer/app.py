@@ -1,16 +1,15 @@
 from flask import Flask, render_template, send_file, make_response, url_for, Response,request,redirect,jsonify
 import pandas as pd
 import pymssql
-import matplotlib.pyplot as plt
 
 from flask_cors import CORS
-
 
 # pip install flask matplotlib pandas pymssql flask_cors
 conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',user='ghebrous.davide',password='xxx123##',database='ghebrous.davide')
 
 app = Flask(__name__)
 CORS(app)
+
 @app.route('/')
 def start():
     return render_template('start.html')

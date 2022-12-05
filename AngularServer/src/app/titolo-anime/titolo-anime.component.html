@@ -1,9 +1,28 @@
 <div class="container-fluid">
     <input #box (keydown)="onKey(box.value)" class="form-control mt-3 mb-3">
     <p *ngIf="loading">LOADING...</p>
-    <ul>
-        <li *ngFor="let title of titolo">
-            {{title.nome}} // {{title.generi}}
-        </li>
-    </ul>
-</div>
+    <table *ngIf="!loading && titolo.length >= 1" class="table table-striped">
+        <thead>
+          <th>id</th>
+          <th>nome</th>
+          <th>generi</th>
+          <th>tipo</th>
+          <th>episodi</th>
+          <th>rating</th>
+          
+        </thead>
+        <tbody>
+          <tr *ngFor="let t of titolo">
+            <td>{{ t.id }}</td>
+            <td>{{ t.nome }}</td>
+            <td>{{ t.generi }}</td>
+            <td>{{ t.tipo }}</td>
+            <td>{{ t.episodi }}</td>
+            <td>{{ t.rating }}</td>
+            
+          </tr>
+        </tbody>
+      </table>
+      <div class="alert alert-danger" *ngIf="titolo.length <1">Error, no staff found in this store</div>
+    </div>
+    
