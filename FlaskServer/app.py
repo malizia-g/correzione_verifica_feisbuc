@@ -39,7 +39,7 @@ def titoloAnime():
 @app.route('/titoloManga', methods=['GET'])
 def titoloManga():
     data = request.args.get("titolo")
-    q = 'SELECT * FROM manga WHERE nome LIKE %(t)s' 
+    q = 'SELECT * FROM manga WHERE titolo LIKE %(t)s' 
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
     cursor.execute(q, p)
