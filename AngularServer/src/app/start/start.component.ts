@@ -6,5 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./start.component.css']
 })
 export class StartComponent {
-
+  fullImagePath: string;
+constructor(){
+  this.fullImagePath = 'assets/images/mt_fuji_bc.png'
+}
 }
