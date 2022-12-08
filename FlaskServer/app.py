@@ -34,6 +34,11 @@ def titoloAnime():
     data = cursor.fetchall()
 
     return jsonify(data)
+#ricerca tramite genere anime
+@app.route('/genereAnime', methods=['GET'])
+def genereAnime():
+    
+    return jsonify(data)
 
 #ricerca tramite titolo manga
 @app.route('/titoloManga', methods=['GET'])
