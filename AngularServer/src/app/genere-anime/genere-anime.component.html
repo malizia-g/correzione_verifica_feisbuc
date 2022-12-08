@@ -13,6 +13,11 @@
 </script>
 </head>
 <body>
-    
+<form action="RisultatoAnime">
+ <input type="checkbox" *ngFor="let n of nome">
+ 
+ <input type="submit" value="Submit">
+</form>
+  <router-outlet></router-outlet>
 </body>
 </html>

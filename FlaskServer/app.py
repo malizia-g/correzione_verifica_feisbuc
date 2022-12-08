@@ -34,9 +34,16 @@ def titoloAnime():
     data = cursor.fetchall()
 
     return jsonify(data)
+
 #ricerca tramite genere anime
 @app.route('/genereAnime', methods=['GET'])
 def genereAnime():
+    data = request.args.get("nome")
+    q = 'SELECT * FROM genere WHERE nome LIKE %(t)s'
+    cursor = conn.cursor(as_dict=True)
+    p = {"t": f"%{data}%"}
+    cursor.execute(q, p)
+    data = cursor.fetchall()
     
     return jsonify(data)
 
