@@ -10,10 +10,14 @@ export class HomeComponent {
   gzl_level: string;
   bc_level: string;
   cvr_white: string;
+  manga_bc: string;
+  anime_bc:string;
 constructor(){
   this.city_level = 'assets/images/godizlla level1.png'
   this.gzl_level = 'assets/images/godizlla level2.png'
   this.bc_level = 'assets/images/godzilla level3.png'
   this.cvr_white = 'assets/images/white-cover-home.png'
+  this.manga_bc = './assets/images/manga-bc.png'
+  this.anime_bc = './assets/images/anime-bc.png'
 }
 }

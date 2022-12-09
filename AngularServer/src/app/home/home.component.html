@@ -1,19 +1,22 @@
-<div class="container position-relative">
+<div class="container position: relative">
     <section class="mx-auto d-block">
         <img [src]="cvr_white" id="white" class="image">
         <img [src]="bc_level" id="bc" class="image">
         <img [src]="gzl_level" id="gzl" class="image">
         <img [src]="city_level" id="city" class="image">
     </section>
-    <h1 class="text-center">TUTTO CIO' CHE CERCHIO IN UN SOLO SITO</h1>
-
-    <div class="row">
-        <div class="col-lg-6 ">
-            <a class="btn" type="submit" [routerLink]="['/TipoRicercaManga']">Manga</a>
+    
+        <h1 class="text-center">
+            TUTTO CIO' CHE CERCHIO IN UN SOLO SITO
+        </h1>
+        
+        <div class="row">
+            <div class="col-lg-6 ">
+                    <a class="btn" id="btn" type="submit" [routerLink]="['/TipoRicercaManga']">Manga</a>
+            </div>
+            <div class="col-lg-6">
+                <a class="btn" id="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">Anime</a>
+            </div>
         </div>
-        <div class="col-lg-6">
-            <a class="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">Anime</a>
-        </div>
-    </div>
 </div>
 <router-outlet></router-outlet>
