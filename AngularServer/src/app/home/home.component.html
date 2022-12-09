@@ -1,25 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet"
-  integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous">
-</script>
-</head>
-<body>
-    <div class="container mt-3">
-        <button type="submit"><a routerLink="/TipoRicercaAnime">Anime</a></button>
-        <button type="submit"><a routerLink="/TipoRicercaManga">Manga</a></button>
+<div class="container position-relative">
+    <section class="mx-auto d-block">
+        <img [src]="cvr_white" id="white" class="image">
+        <img [src]="bc_level" id="bc" class="image">
+        <img [src]="gzl_level" id="gzl" class="image">
+        <img [src]="city_level" id="city" class="image">
+    </section>
+    <h1 class="text-center">TUTTO CIO' CHE CERCHI IN UN SOLO SITO</h1>
+
+    <div class="row">
+        <div class="col-lg-6 ">
+            <a class="btn" type="submit" [routerLink]="['/TipoRicercaManga']">Manga</a>
+        </div>
+        <div class="col-lg-6">
+            <a class="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">Anime</a>
+        </div>
     </div>
-</body>
-</html>
-
+</div>
 <router-outlet></router-outlet>
-
-
