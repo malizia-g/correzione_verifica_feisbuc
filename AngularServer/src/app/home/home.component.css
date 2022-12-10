@@ -73,7 +73,7 @@ h1{
     cursor: pointer;
     z-index: 21;
 }
-/* .body .hide{
+.body .hide{
     position: absolute;
     left:0;
     top: 0;
@@ -90,7 +90,7 @@ h1{
     border:3px solid rgb(60, 39, 121);
     position: absolute;
     left: -100px;
-} */
+}
 .hover_image:hover {text-decoration: none} 
 .hide {display:none}
 .hover_image:hover img:first-child{display:none}

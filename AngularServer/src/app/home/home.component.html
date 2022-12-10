@@ -11,9 +11,9 @@
             TUTTO CIO' CHE CERCHIO IN UN SOLO SITO
         </h1>
         <div class="row">
-          <!-- <div class="ring"></div> -->
             <div class="col-lg-6 ">
               <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TipoRicercaManga']">
+                <div class="ring"></div>
                 <div class="centered">MANGA</div>
                 <img [src]="manga_bc" class="hide">
               </a>
@@ -26,15 +26,5 @@
             </div>
         </div>
 </div>
-<!-- <script>
-  var hover_btn = document.querySelector('.hide')
-  var ring = document.querySelector('.ring')
-
-  document.querySelector('.row').addEventListener('mousemove',(e)=>{
-    var x=e.offsetX;
-    var y=e.offsetY;
-
-    hover_btn.style.ClipPath = 'Circle(50px at ${x}px ${y}px)';
-  })
-</script> -->
+<script src="AngularServer/src/assets/home.js"></script>
 <router-outlet></router-outlet>
