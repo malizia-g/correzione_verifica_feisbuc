@@ -1,4 +1,5 @@
 <div class="container position: relative">
+  <div class="top-right">r</div>
     <section class="mx-auto d-block">
         <img [src]="cvr_white" id="white" class="image">
         <img [src]="bc_level" id="bc" class="image">
@@ -9,36 +10,31 @@
         <h1 class="text-center">
             TUTTO CIO' CHE CERCHIO IN UN SOLO SITO
         </h1>
-        
         <div class="row">
+          <!-- <div class="ring"></div> -->
             <div class="col-lg-6 ">
-                    <a class="btn" id="btn" type="submit" [routerLink]="['/TipoRicercaManga']">Manga</a>
+              <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TipoRicercaManga']">
+                <div class="centered">MANGA</div>
+                <img [src]="manga_bc" class="hide">
+              </a>
             </div>
             <div class="col-lg-6">
-                <a class="btn" id="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">Anime</a>
+              <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">
+                <div class="centered">ANIME</div>
+                <img [src]="anime_bc" class="hide">
+              </a>
             </div>
         </div>
 </div>
+<!-- <script>
+  var hover_btn = document.querySelector('.hide')
+  var ring = document.querySelector('.ring')
+
+  document.querySelector('.row').addEventListener('mousemove',(e)=>{
+    var x=e.offsetX;
+    var y=e.offsetY;
+
+    hover_btn.style.ClipPath = 'Circle(50px at ${x}px ${y}px)';
+  })
+</script> -->
 <router-outlet></router-outlet>
-
-
-<main>
-    <div class='items'>
-      <div class='item'>
-        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
-          <defs>
-            <clipPath id='clip-0'>
-              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
-            </clipPath>
-          </defs>
-          <text class='svg-text' dy='.3em' x='50%' y='50%'>
-            X-rays
-          </text>
-          <g clip-path='url(#clip-0)'>
-            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' [src]="manga_bc"></image>
-            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
-              X-rays
-            </text>
-          </g>
-        </svg>
-      </div>
