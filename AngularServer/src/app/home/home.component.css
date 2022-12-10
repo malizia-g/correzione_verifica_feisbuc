@@ -12,6 +12,12 @@ section img{
     background-size: cover;
     background-attachment: fixed;
 }
+section img#reg{
+    height: 10%;
+    width: auto;
+    z-index: 30;
+
+}
 section img#white{
     z-index: 20;
 }
@@ -24,9 +30,6 @@ section img#gzl{
 }
 section img#bc{
     z-index: 9;
-}
-.top-right{
-    position: absolute;
 }
 h1{
     top: 105%;
