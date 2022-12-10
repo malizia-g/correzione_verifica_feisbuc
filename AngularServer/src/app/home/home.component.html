@@ -20,3 +20,25 @@
         </div>
 </div>
 <router-outlet></router-outlet>
+
+
+<main>
+    <div class='items'>
+      <div class='item'>
+        <svg preserveAspectRatio='xMidYMid slice' viewBox='0 0 300 200'>
+          <defs>
+            <clipPath id='clip-0'>
+              <circle cx='0' cy='0' fill='#000' r='150px'></circle>
+            </clipPath>
+          </defs>
+          <text class='svg-text' dy='.3em' x='50%' y='50%'>
+            X-rays
+          </text>
+          <g clip-path='url(#clip-0)'>
+            <image height='100%' preserveAspectRatio='xMinYMin slice' width='100%' [src]="manga_bc"></image>
+            <text class='svg-masked-text' dy='.3em' x='50%' y='50%'>
+              X-rays
+            </text>
+          </g>
+        </svg>
+      </div>
