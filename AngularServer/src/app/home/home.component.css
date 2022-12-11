@@ -1,50 +1,59 @@
 @font-face {
     font-family: "the_stoothgartregular";
     src: url('./assets/fonts/The Stoothgart.ttf') format("truetype");
-  }
-section img{
+}
+
+section img {
     position: absolute;
     width: 100%;
     height: 100vh;
     padding: 0px;
     left: 0%;
-    object-fit:contain;
+    object-fit: contain;
     background-size: cover;
     background-attachment: fixed;
 }
-section img#reg{
-    height: 10%;
+
+section img#reg {
+    height: 15%;
     width: auto;
     z-index: 30;
-
+    left: 84%;
+    transform: translate(85%, 20%);
 }
-section img#white{
+
+section img#white {
     z-index: 20;
 }
-section img#city{
+
+section img#city {
     z-index: 11;
-    
+
 }
-section img#gzl{
+
+section img#gzl {
     z-index: 10;
 }
-section img#bc{
+
+section img#bc {
     z-index: 9;
 }
-h1{
+
+h1 {
     top: 105%;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
     align-content: center;
-    font-family:'the_stoothgartregular';
+    font-family: 'the_stoothgartregular';
     font-size: 60px;
     z-index: 30;
 }
+
 .row {
-    position:absolute;
-    display:flex;
+    position: absolute;
+    display: flex;
     flex-wrap: wrap;
     border-radius: 15px;
     top: 120%;
@@ -54,50 +63,56 @@ h1{
     align-content: center;
     z-index: 22;
 }
-#btn{
+
+#btn {
     width: 300px;
     height: 120px;
     border-radius: 15px;
-    display:flex;
+    display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-content: center;
 
-    background-image: linear-gradient(RGB(241, 243, 181),RGB(20, 80, 89));
+    background-image: linear-gradient(RGB(241, 243, 181), RGB(20, 80, 89));
     background-size: cover;
     background-attachment: fixed;
     overflow: hidden;
     color: rgba(255, 255, 255);
-    font-family:'the_stoothgartregular';
+    font-family: 'the_stoothgartregular';
     font-size: 60px;
-    text-decoration:none; 
+    text-decoration: none;
     text-transform: uppercase;
 
     cursor: pointer;
     z-index: 21;
 }
-.body .hide{
-    position: absolute;
-    left:0;
-    top: 0;
-    background: #f1f1ff;
-    clip-path: circle(0px at 0 0);
-}
-.body{
-    overflow: hidden;
-}
-.ring{
+
+.ring {
     width: 100px;
     height: 100px;
     border-radius: 50%;
-    border:3px solid rgb(60, 39, 121);
+    border: 3px solid rgb(60, 39, 121);
     position: absolute;
     left: -100px;
+    pointer-events: none;
+    z-index: 9999;
 }
-.hover_image:hover {text-decoration: none} 
-.hide {display:none}
-.hover_image:hover img:first-child{display:none}
-.hover_image:hover img:last-child{display:inline-block}
+
+/* .hover_image:hover {
+    text-decoration: none
+} */
+
+.hide {
+    display: none
+}
+
+.hover_image:hover img:first-child {
+    display: none
+}
+
+.hover_image:hover img:last-child {
+    display: inline-block
+}
 
 /* #btn:hover {
     background-image:linear-gradient(rgba(7, 152, 149),rgba(255, 120, 39));
@@ -105,4 +120,3 @@ h1{
     -webkit-text-fill-color: transparent;
     border: 1px solid rgba(13, 59, 66);
 } */
-

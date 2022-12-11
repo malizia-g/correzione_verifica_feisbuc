@@ -1,6 +1,7 @@
-<div class="container position: relative">
+<div class="container position: relative circle-container">
+  <div class="ring"></div>
   <section class="mx-auto d-block">
-    <img [src]="gzl_r" id="reg" class="image pull-right">
+    <img [src]="gzl_r" class="image pull-right" id="reg" [routerLink]="['/Register']">
     <img [src]="cvr_white" id="white" class="image">
     <img [src]="bc_level" id="bc" class="image">
     <img [src]="gzl_level" id="gzl" class="image">
@@ -10,21 +11,21 @@
   <h1 class="text-center">
     TUTTO CIO' CHE CERCHIO IN UN SOLO SITO
   </h1>
-  <div class="row">
-    <div class="col-lg-6 ">
-      <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TipoRicercaManga']">
-        <div class="ring"></div>
-        <div class="centered">MANGA</div>
-        <img [src]="manga_bc" class="hide">
-      </a>
-    </div>
-    <div class="col-lg-6">
-      <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">
-        <div class="centered">ANIME</div>
-        <img [src]="anime_bc" class="hide">
-      </a>
+  <div class="">
+    <div class="row">
+      <div class="col-lg-6 ">
+        <a class="btn hover_image btn-manga" id="btn" type="submit" [routerLink]="['/TipoRicercaManga']">
+          <div class="centered">MANGA</div>
+          <img [src]="manga_bc" class="hide ">
+        </a>
+      </div>
+      <div class="col-lg-6">
+        <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TipoRicercaAnime']">
+          <div class="centered">ANIME</div>
+          <img [src]="anime_bc" class="hide">
+        </a>
+      </div>
     </div>
   </div>
 </div>
-<script src="AngularServer/src/assets/home.js"></script>
 <router-outlet></router-outlet>
