@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class GenereAnimeComponent {
   nome! : any;
-  url: string = "https://3000-navarette-otakupeak-5osswp70dyu.ws-eu77.gitpod.io/genereAnime";
+  url: string = "https://3000-navarette-otakupeak-jsb85a2mfbn.ws-eu78.gitpod.io/genereAnime";
   
   constructor(public http : HttpClient){
     this.get(this.url);
@@ -16,7 +16,10 @@ export class GenereAnimeComponent {
   get(url: string): void {
     this.http.get(url).subscribe(data => {
       this.nome = data;
-      
+      console.log(data);
     });
+  }
+  parse(s: string): string {
+    return "genere" + s;
   }
 }

@@ -27,7 +27,7 @@ def tipoRiceraAnime():
 @app.route('/titoloAnime', methods=['GET'])
 def titoloAnime():
     data = request.args.get("titolo")
-    q = 'SELECT * FROM anime WHERE nome LIKE %(t)s' 
+    q = 'SELECT * FROM anime ' + ('WHERE nome LIKE %(t)s' if data != None and data != '' else "")
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
     cursor.execute(q, p)
@@ -38,15 +38,23 @@ def titoloAnime():
 #ricerca tramite genere anime
 @app.route('/genereAnime', methods=['GET'])
 def genereAnime():
-    data = request.args.get("nome")
-    q = 'SELECT * FROM genere WHERE nome LIKE %(t)s'
+    q = 'SELECT * FROM genere order by nome'
     cursor = conn.cursor(as_dict=True)
-    p = {"t": f"%{data}%"}
-    cursor.execute(q, p)
+    cursor.execute(q)
     data = cursor.fetchall()
     
     return jsonify(data)
+#risultato anime
+@app.route('/risultatoAnime',methods=['GET'])
+def risultatoAnime():
 
+    return jsonify(data)
+
+
+#pagina contenente i tipi di ricerca che si vuole utilizzare per i manga   
+@app.route('/tipoRicercaManga')
+def tipoRiceraManga():
+    return render_template('tipoRicercaManga.html')
 #ricerca tramite titolo manga
 @app.route('/titoloManga', methods=['GET'])
 def titoloManga():
@@ -58,10 +66,16 @@ def titoloManga():
     data = cursor.fetchall()
 
     return jsonify(data)
-#pagina contenente i tipi di ricerca che si vuole utilizzare per i manga   
-@app.route('/tipoRicercaManga')
-def tipoRiceraManga():
-    return render_template('tipoRicercaManga.html')
+#ricerca tramite genere manga
+@app.route('/genereManga', methods=['GET'])
+def genereManga():
+    q = 'SELECT * FROM genere order by nome'
+    cursor = conn.cursor(as_dict=True)
+    cursor.execute(q)
+    data = cursor.fetchall()
+    
+    return jsonify(data)
+
 
 
 

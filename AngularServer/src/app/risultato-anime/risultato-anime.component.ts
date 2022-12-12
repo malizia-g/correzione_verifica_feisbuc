@@ -6,5 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./risultato-anime.component.css']
 })
 export class RisultatoAnimeComponent {
+ 
+constructor(){}
 
 }

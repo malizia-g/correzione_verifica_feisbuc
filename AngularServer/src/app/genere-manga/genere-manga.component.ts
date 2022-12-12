@@ -1,3 +1,4 @@
+import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
 
 @Component({
@@ -6,5 +7,19 @@ import { Component } from '@angular/core';
   styleUrls: ['./genere-manga.component.css']
 })
 export class GenereMangaComponent {
-
+  nome! : any;
+  url: string = "https://3000-navarette-otakupeak-jsb85a2mfbn.ws-eu78.gitpod.io/genereManga";
+  
+  constructor(public http : HttpClient){
+    this.get(this.url);
+  }
+  get(url: string): void {
+    this.http.get(url).subscribe(data => {
+      this.nome = data;
+      console.log(data);
+    });
+  }
+  parse(s: string): string {
+    return "genere" + s;
+  }
 }
