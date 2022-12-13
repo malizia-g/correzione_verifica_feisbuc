@@ -9,5 +9,17 @@
         <th>rating</th>
               
         </thead>
+        <tbody>
+            <tr *ngFor="let t of titolo">
+              <td>{{ t.id }}</td>
+              <td>{{ t.nome }}</td>
+              <td>{{ t.generi }}</td>
+              <td>{{ t.tipo }}</td>
+              <td>{{ t.episodi }}</td>
+              <td>{{ t.rating }}</td>
+                  
+            </tr>
+            </tbody>
+        </table>
 </div>
 <router-outlet></router-outlet> -->
