@@ -8,7 +8,7 @@ import { Component } from '@angular/core';
 })
 export class GenereMangaComponent {
   nome! : any;
-  url: string = "https://3000-navarette-otakupeak-359qbn0r6ct.ws-eu78.gitpod.io/genereManga";
+  url: string = "https://3000-navarette-otakupeak-qzl8w1pceq9.ws-eu79.gitpod.io/genereManga";
   
   constructor(public http : HttpClient){
     this.get(this.url);
