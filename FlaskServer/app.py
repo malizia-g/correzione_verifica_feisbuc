@@ -22,15 +22,21 @@ def home():
     return render_template('home.html')
 
 
-@app.route('/Register')
-def reg():
+@app.route('/Register',methods=['GET', 'POST'])
+def reg(username,email,password,cpwd):
     username = request.args.get("username")
     email = request.args.get("email")
-    psw = request.args.get("pwd")
-    cpsw = request.args.get("cpwd")
-   
-    return render_template('Register.html')
+    # Il controllo della password e della sua conferma lo faccio fare ad Angular tramite la form
+    password = request.args.get("pwd")
+    cpwd = request.args.get("cpwd")
 
+    q = "INSERT INTO dbo.utente (username,email,pwd) VALUES (%(username)s, %(email)s, %(password)s)"
+    cursor = conn.cursor(as_dict=True)
+    cursor.execute(q, params={"u": username, "email": email, "password": password})
+    print(cursor)
+    conn.commit()
+
+    return jsonify({"msg": "OKE FRATM, HO AGGIUNTO UN NUOVO UTENTE"})
 
 # pagina contenente i tipi di ricerca che si vuole utilizzare per gli anime
 @app.route('/tipoRicercaAnime')
