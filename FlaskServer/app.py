@@ -41,8 +41,6 @@ def tipoRiceraAnime():
     return render_template('tipoRicercaAnime.html')
 
 # ricerca tramite titolo anime
-
-
 @app.route('/titoloAnime', methods=['GET'])
 def titoloAnime():
     data = request.args.get("titolo")
@@ -71,7 +69,12 @@ def genereAnime():
 
 @app.route('/risultatoAnime', methods=['GET'])
 def risultatoAnime():
-    print(nome)
+    print(params['scelta'])
+    q = f'SELECT * FROM anime ORDER BY nome WHERE genere LIKE ' + f"%{params['scelta']}%"
+    cursor = conn.cursor(as_dict=True)
+    cursor.execute(q)
+    data = cursor.fetchall()
+    print(data)
     return jsonify(data)
 
 

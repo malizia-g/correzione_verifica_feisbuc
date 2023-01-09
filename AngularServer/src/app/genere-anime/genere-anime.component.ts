@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 import { genAnime } from './genere-anime.mode';
 
 @Component({
@@ -9,7 +10,7 @@ import { genAnime } from './genere-anime.mode';
 })
 export class GenereAnimeComponent {
   nome! : any;
-  url: string = "https://3000-navarette-otakupeak-ij84fp77y4j.ws-eu81.gitpod.io/genereAnime";
+  url: string = "https://3000-navarette-otakupeak-bld71qfg52t.ws-eu81.gitpod.io/genereAnime";
   
   constructor(public http : HttpClient){
     this.get(this.url);
