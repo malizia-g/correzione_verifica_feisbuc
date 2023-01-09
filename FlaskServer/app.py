@@ -11,16 +11,13 @@ conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',
 app = Flask(__name__)
 CORS(app)
 
-
 @app.route('/')
 def start():
     return render_template('start.html')
 
-
 @app.route('/home')
 def home():
     return render_template('home.html')
-
 
 @app.route('/Register',methods=['GET', 'POST'])
 def reg(username,email,password,cpwd):
@@ -59,22 +56,22 @@ def titoloAnime():
     return jsonify(data)
 
 # ricerca tramite genere anime
-
-
 @app.route('/genereAnime', methods=['GET'])
 def genereAnime():
+    global nome
+    nome = request.args.get("scelta")
     q = 'SELECT * FROM genere order by nome'
     cursor = conn.cursor(as_dict=True)
     cursor.execute(q)
     data = cursor.fetchall()
-
+    
     return jsonify(data)
-# risultato anime
 
+# risultato anime
 
 @app.route('/risultatoAnime', methods=['GET'])
 def risultatoAnime():
-
+    print(nome)
     return jsonify(data)
 
 
@@ -82,9 +79,8 @@ def risultatoAnime():
 @app.route('/tipoRicercaManga')
 def tipoRiceraManga():
     return render_template('tipoRicercaManga.html')
+
 # ricerca tramite titolo manga
-
-
 @app.route('/titoloManga', methods=['GET'])
 def titoloManga():
     data = request.args.get("titolo")
@@ -96,18 +92,18 @@ def titoloManga():
     data = cursor.fetchall()
 
     return jsonify(data)
+
 # ricerca tramite genere manga
-
-
 @app.route('/genereManga', methods=['GET'])
 def genereManga():
+    nome = request.args.get("scelta")
+    
     q = 'SELECT * FROM genere order by nome'
     cursor = conn.cursor(as_dict=True)
     cursor.execute(q)
     data = cursor.fetchall()
 
     return jsonify(data)
-
 
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3000)

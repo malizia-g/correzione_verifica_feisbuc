@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { genAnime } from './genere-anime.mode';
 
 @Component({
   selector: 'app-genere-anime',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class GenereAnimeComponent {
   nome! : any;
-  url: string = "https://3000-navarette-otakupeak-zzc02tr4urf.ws-eu79.gitpod.io/genereAnime";
+  url: string = "https://3000-navarette-otakupeak-ij84fp77y4j.ws-eu81.gitpod.io/genereAnime";
   
   constructor(public http : HttpClient){
     this.get(this.url);
