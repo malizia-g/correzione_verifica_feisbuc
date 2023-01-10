@@ -10,13 +10,12 @@ import { GenereAnimeComponent } from '../genere-anime/genere-anime.component';
   styleUrls: ['./risultato-anime.component.css']
 })
 export class RisultatoAnimeComponent implements OnInit{
-  url: string = "https://3000-navarette-otakupeak-bld71qfg52t.ws-eu81.gitpod.io/RisultatoAnime";
+  url: string = "https://3000-navarette-otakupeak-xctehi7mvb3.ws-eu81.gitpod.io/RisultatoAnime";
   genere!: any;
   vettoreScelte! : any
   constructor(private route: ActivatedRoute, public http : HttpClient){
-    this.get(this.url);
+    
   }
-  
 
   ngOnInit(): void {
     this.route.queryParams
@@ -24,10 +23,15 @@ export class RisultatoAnimeComponent implements OnInit{
         console.log(params); 
 
       this.vettoreScelte =  params['scelta'];
+      console.log(this.vettoreScelte)
+      this.url = this.url + "?scelta=" + this.vettoreScelte
+      this.get(this.url);
       })
-      for (let i = 0; i < this.vettoreScelte.length; i++) {
-        this.url = this.url + '?scelta=' + this.vettoreScelte[i]
-      }}
+      // for (let i = 0; i < this.vettoreScelte.length; i++) {
+      //   let s = i == 0 ? "?" : "&";
+      //   this.url = this.url + s +'scelta=' + this.vettoreScelte[i]
+      // }
+    }
       
   
  

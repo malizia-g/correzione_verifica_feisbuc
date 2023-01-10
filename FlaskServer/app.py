@@ -67,10 +67,12 @@ def genereAnime():
 
 # risultato anime
 
-@app.route('/risultatoAnime', methods=['GET'])
+@app.route('/RisultatoAnime', methods=['GET'])
 def risultatoAnime():
-    print(params['scelta'])
-    q = f'SELECT * FROM anime ORDER BY nome WHERE genere LIKE ' + f"%{params['scelta']}%"
+    params = request.args.get("scelta").split(",")
+    prato = " AND ".join(['generi LIKE \'%'+p+'%\'' for p in params])
+    q = 'SELECT * FROM anime WHERE ' + prato + ' ORDER BY nome'
+    print(q)
     cursor = conn.cursor(as_dict=True)
     cursor.execute(q)
     data = cursor.fetchall()

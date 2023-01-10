@@ -10,7 +10,7 @@ import { genAnime } from './genere-anime.mode';
 })
 export class GenereAnimeComponent {
   nome! : any;
-  url: string = "https://3000-navarette-otakupeak-bld71qfg52t.ws-eu81.gitpod.io/genereAnime";
+  url: string = "https://3000-navarette-otakupeak-xctehi7mvb3.ws-eu81.gitpod.io/genereAnime";
   
   constructor(public http : HttpClient){
     this.get(this.url);
