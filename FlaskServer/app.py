@@ -110,5 +110,19 @@ def genereManga():
 
     return jsonify(data)
 
+# risultato manga
+
+@app.route('/RisultatoManga', methods=['GET'])
+def risultatoManga():
+    params = request.args.get("scelta").split(",")
+    prato = " AND ".join(['generi LIKE \'%'+p+'%\'' for p in params])
+    q = 'SELECT * FROM manga WHERE ' + prato + ' ORDER BY nome'
+    print(q)
+    cursor = conn.cursor(as_dict=True)
+    cursor.execute(q)
+    data = cursor.fetchall()
+    print(data)
+    return jsonify(data)
+
 if __name__ == '__main__':
     app.run(host='0.0.0.0', debug=True, port=3000)
