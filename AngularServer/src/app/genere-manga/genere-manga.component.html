@@ -1,7 +1,7 @@
-<form action="/RisultatoManga">
+<form>
   <div class="form-check" *ngFor="let n of nome">
-    <input class="form-check-input" type="checkbox" name="scelta" value="{{n.nome}}" id="{{parse(n.nome)}}">
+    <input class="form-check-input" type="checkbox" name="scelta" value="{{n.nome}}" id="{{parse(n.nome)}}" (change)="update(n, $event)">
     <label class="form-check-label" for="{{parse(n.nome)}}">{{n.nome}}</label>
   </div>
-  <input type="submit" class="btn btn-primary mt-3">
+  <input (click)="click($event)" type="submit" class="btn btn-primary mt-3">
 </form>

@@ -99,7 +99,7 @@ def titoloManga():
     return jsonify(data)
 
 # ricerca tramite genere manga
-@app.route('/genereManga', methods=['GET'])
+@app.route('/GenereManga', methods=['GET'])
 def genereManga():
     nome = request.args.get("scelta")
     
@@ -115,7 +115,7 @@ def genereManga():
 @app.route('/RisultatoManga', methods=['GET'])
 def risultatoManga():
     params = request.args.get("scelta").split(",")
-    prato = " AND ".join(['generi LIKE \'%'+p+'%\'' for p in params])
+    prato = " AND ".join(['genere LIKE \'%'+p+'%\'' for p in params])
     q = 'SELECT * FROM manga WHERE ' + prato + ' ORDER BY nome'
     print(q)
     cursor = conn.cursor(as_dict=True)
