@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Component } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-genere-manga',
@@ -8,7 +9,7 @@ import { Component } from '@angular/core';
 })
 export class GenereMangaComponent {
   nome! : any;
-  url: string = "https://3000-navarette-otakupeak-aj90371zsrg.ws-eu82.gitpod.io/GenereManga";
+  url: string = "https://3000-navarette-otakupeak-hr3lu7e96oa.ws-eu82.gitpod.io/GenereManga";
   
   constructor(public http : HttpClient){
     this.get(this.url);
@@ -17,6 +18,9 @@ export class GenereMangaComponent {
     this.http.get(url).subscribe(data => {
       this.nome = data;
       console.log(data);
+      for (let i = 0; i < this.nome.length; i++) {
+        this.nome[i].checked = false;}
+        console.log(data);
     });
   }
   parse(s: string): string {

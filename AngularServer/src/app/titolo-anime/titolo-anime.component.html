@@ -4,7 +4,6 @@
   <p *ngIf="loading">LOADING...</p>
   <table *ngIf="!loading && titolo.length >= 1" class="table table-striped">
     <thead>
-    <th>id</th>
     <th>nome</th>
     <th>generi</th>
     <th>tipo</th>
@@ -14,7 +13,6 @@
     </thead>
     <tbody>
       <tr *ngFor="let t of titolo">
-        <td>{{ t.id }}</td>
         <td>{{ t.nome }}</td>
         <td>{{ t.generi }}</td>
         <td>{{ t.tipo }}</td>

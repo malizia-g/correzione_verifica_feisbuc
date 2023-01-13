@@ -44,8 +44,7 @@ def tipoRiceraAnime():
 @app.route('/titoloAnime', methods=['GET'])
 def titoloAnime():
     data = request.args.get("titolo")
-    q = 'SELECT * FROM anime ' + \
-        ('WHERE nome LIKE %(t)s' if data != None and data != '' else "")
+    q = 'SELECT * FROM anime ' + ('WHERE nome LIKE %(t)s' if data != None and data != '' else "")
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
     cursor.execute(q, p)
@@ -66,7 +65,6 @@ def genereAnime():
     return jsonify(data)
 
 # risultato anime
-
 @app.route('/RisultatoAnime', methods=['GET'])
 def risultatoAnime():
     params = request.args.get("scelta").split(",")
@@ -89,8 +87,7 @@ def tipoRiceraManga():
 @app.route('/titoloManga', methods=['GET'])
 def titoloManga():
     data = request.args.get("titolo")
-    q = 'SELECT * FROM manga' + \
-        ('WHERE nome LIKE %(t)s' if data != None and data != '' else "")
+    q = 'SELECT * FROM manga' + ('WHERE titolo LIKE %(t)s' if data != None and data != '' else "")
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
     cursor.execute(q, p)
@@ -111,12 +108,11 @@ def genereManga():
     return jsonify(data)
 
 # risultato manga
-
 @app.route('/RisultatoManga', methods=['GET'])
 def risultatoManga():
     params = request.args.get("scelta").split(",")
-    prato = " AND ".join(['genere LIKE \'%'+p+'%\'' for p in params])
-    q = 'SELECT * FROM manga WHERE ' + prato + ' ORDER BY nome'
+    prato = " AND ".join(['generi LIKE \'%'+p+'%\'' for p in params])
+    q = 'SELECT * FROM manga WHERE ' + prato + ' ORDER BY titolo'
     print(q)
     cursor = conn.cursor(as_dict=True)
     cursor.execute(q)
