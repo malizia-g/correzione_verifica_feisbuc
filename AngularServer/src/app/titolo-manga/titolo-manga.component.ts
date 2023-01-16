@@ -25,5 +25,6 @@ export class TitoloMangaComponent {
 
   onKey(value: string) {
     this.get(this.url + "?titolom=" + value);
+    console.log(value)
   }
 }

@@ -1,5 +1,5 @@
 <div class="container-fluid">
-    <input #box (keydown)="onKey(box.value)" class="form-control mt-3 mb-3">
+    <input #box (keyup)="onKey(box.value)" class="form-control mt-3 mb-3">
     <p *ngIf="loading">LOADING...</p>
     <table *ngIf="!loading && titolom.length > 1" class="table table-striped">
         <thead>

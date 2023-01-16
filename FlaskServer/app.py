@@ -88,12 +88,16 @@ def tipoRiceraManga():
 @app.route('/titoloManga', methods=['GET'])
 def titoloManga():
     data = request.args.get("titolom")
+
     print("il dato è" + str(data))
-    q = 'SELECT * FROM manga' + ('WHERE titolo LIKE %(t)s' if data != None and data != '' else "")
+
+    q = 'SELECT * FROM manga ' + ('WHERE titolo LIKE %(t)s' if data != None and data != '' else "")
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
     cursor.execute(q, p)
     data = cursor.fetchall()
+
+    print(data)
 
     return jsonify(data)
 
