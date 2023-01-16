@@ -7,9 +7,9 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./titolo-anime.component.css']
 })
 export class TitoloAnimeComponent {
-  titolo!: any;
+  titoloa!: any;
   loading!: Boolean;
-  url: string = "https://3000-navarette-otakupeak-hr3lu7e96oa.ws-eu82.gitpod.io/titoloAnime";
+  url: string = "https://3000-navarette-otakupeak-5gphpddijpx.ws-eu82.gitpod.io/titoloAnime";
 
   constructor(public http: HttpClient) {
     this.get(this.url);
@@ -18,12 +18,12 @@ export class TitoloAnimeComponent {
   get(url: string): void {
     this.loading = true;
     this.http.get(url).subscribe(data => {
-      this.titolo = data;
+      this.titoloa = data;
       this.loading = false;
     });
   }
 
   onKey(value: string) {
-    this.get(this.url + "?titolo=" + value);
+    this.get(this.url + "?titoloa=" + value);
   }
 }

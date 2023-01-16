@@ -1,1 +1,23 @@
-{{genere | json}}
+<div class="container-fluid">
+  
+    <table class="table table-striped">
+      <thead>
+        <th>Nome</th>
+        <th>Generi</th>
+        <th>Tipo</th>
+        <th>Episodi</th>
+        <th>Rating</th>
+            
+      </thead>
+      <tbody>
+        <tr *ngFor="let g of genere">
+            <td>{{ g.nome }}</td>
+            <td>{{ g.generi }}</td>
+            <td>{{ g.tipo }}</td>
+            <td>{{ g.episodi }}</td>
+            <td>{{ g.rating }}</td>
+              
+        </tr>
+        </tbody>
+    </table>
+    </div> 

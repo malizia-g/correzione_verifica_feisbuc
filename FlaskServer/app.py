@@ -43,7 +43,7 @@ def tipoRiceraAnime():
 # ricerca tramite titolo anime
 @app.route('/titoloAnime', methods=['GET'])
 def titoloAnime():
-    data = request.args.get("titolo")
+    data = request.args.get("titoloa")
     q = 'SELECT * FROM anime ' + ('WHERE nome LIKE %(t)s' if data != None and data != '' else "")
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}
@@ -86,7 +86,7 @@ def tipoRiceraManga():
 # ricerca tramite titolo manga
 @app.route('/titoloManga', methods=['GET'])
 def titoloManga():
-    data = request.args.get("titolo")
+    data = request.args.get("titolom")
     q = 'SELECT * FROM manga' + ('WHERE titolo LIKE %(t)s' if data != None and data != '' else "")
     cursor = conn.cursor(as_dict=True)
     p = {"t": f"%{data}%"}

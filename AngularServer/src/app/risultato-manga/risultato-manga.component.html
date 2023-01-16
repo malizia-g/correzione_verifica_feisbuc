@@ -1,27 +1,20 @@
-<!-- <p *ngFor="let s of data">{{s.titolo | json}}</p> -->
-{{generim|json}}
-<!-- <div class="container-fluid">
+ <!-- <p *ngFor="let s of generim">{{s.titolo|json}}</p> -->
+<div class="container-fluid">
   
   <table class="table table-striped">
     <thead>
-    <th>id</th>
-    <th>titolo</th>
-    <th>generi</th>
-    <th>tipo</th>
-    <th>episodi</th>
-    <th>rating</th>
-          
+    <th>Titolo</th>
+    <th>Generi</th>
+    <th>Rating</th>
+    <th>Rank</th>      
     </thead>
     <tbody>
-      <tr *ngFor="let s of scelta">
-        <td>{{ s.id }}</td>
+      <tr *ngFor="let s of generim">
         <td>{{s.titolo }}</td>
-        <td>{{ t.generi }}</td>
-        <td>{{ t.tipo }}</td>
-        <td>{{ t.episodi }}</td>
-        <td>{{ t.rating }}</td>
-            
+        <td>{{ s.generi }}</td>
+        <td>{{ s.rating }}</td>
+        <td>{{ s.Rank }}</td>   
       </tr>
       </tbody>
   </table>
-  </div> -->
+  </div> 
