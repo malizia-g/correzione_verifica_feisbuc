@@ -13,6 +13,7 @@
           <th>sinossi</th>
           <th>Periodo_pubblicazione</th>
           <th>generi</th>
+
         </thead>
         <tbody>
           <tr *ngFor="let t of titolom">
@@ -26,9 +27,10 @@
             <td>{{ t.sinossi}}</td>
             <td>{{ t.Periodo_pubblicazione}}</td>
             <td>{{ t.generi }}</td>
+
           </tr>
         </tbody>
-      </table>
+    </table>
       <!-- <div class="alert alert-danger" *ngIf="titolom.length < 1"></div> -->
 </div>
 
