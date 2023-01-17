@@ -1,0 +1,38 @@
+@font-face {
+    font-family: "the_stoothgartregular";
+    src: url('./assets/fonts/The Stoothgart.ttf') format("truetype");
+}
+.row {
+    position: absolute;
+    display: flex;
+    flex-wrap: wrap;
+    border-radius: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    justify-content: center;
+    align-content: center;
+}
+
+#btn {
+    width: 200%;
+    height: 200%;
+    border-radius: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: center;
+
+    background-image: linear-gradient(RGB(241, 243, 181), RGB(20, 80, 89));
+    background-size: cover;
+    background-attachment: fixed;
+    overflow: hidden;
+    color: rgba(255, 255, 255);
+    font-family: 'the_stoothgartregular';
+    font-size: 60px;
+    text-decoration: none;
+    text-transform: uppercase;
+
+    cursor: pointer;
+    z-index: 21;
+}

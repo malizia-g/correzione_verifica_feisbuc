@@ -1,7 +1,16 @@
-<div class="container mt-3">
-    <button type="submit"><a routerLink="/TitoloAnime">Titolo</a></button>
-    <button type="submit"><a routerLink="/GenereAnime">Genere</a></button> 
-
+<div class="container position: relative mt-3">
+    <div class="">
+        <div class="row">
+          <div class="col-lg-6">
+            <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/TitoloAnime']">
+              <div class="centered">Titolo</div>
+            </a>
+          </div>
+          <div class="col-lg-3">
+            <a class="btn hover_image" id="btn" type="submit" [routerLink]="['/GenereAnime']">
+              <div class="centered">Genere</div>
+            </a>
+          </div>
+        </div>
+    </div>
 </div>
-
-
