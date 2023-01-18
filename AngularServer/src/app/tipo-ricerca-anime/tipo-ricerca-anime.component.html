@@ -1,22 +1,19 @@
-<div class="container position: relative">
+<div class="container text-center">
   <div class="">
-      <div class="row centered">
-        <div class="col-md-12 col-lg-6">
+    <div class="row gap-2 d-flex flex-nowrap flex-row position-absolute top-50 start-50 translate-middle justify-content-evenly rounded-3">
 
-          <a class="btn btn-titolo" id="btn" type="submit" [routerLink]="['/TitoloAnime']">
-            <div class="centered">
-              Titolo
-            </div>
-          </a>
-        </div>
-
-        <div class="col-md-12 col-lg-6">
-          <a class="btn btn-genere" id="btn" type="submit" [routerLink]="['/GenereAnime']">
-            <div class="centered">
-              Genere
-            </div>
-          </a>
-        </div>
+      <div class="col-md-12 col-lg-6">
+        <a class="btn d-inline-block btn-lg" id="btn" type="submit" [routerLink]="['/TitoloAnime']">
+          <div class="text-center text-wrap display-1 text-white">TITOLO</div>
+        </a>
       </div>
+
+      <div class="col-md-12 col-lg-6">
+        <a class="btn d-inline-block btn-lg" id="btn" type="submit" [routerLink]="['/GenereAnime']">
+          <div class="text-center text-wrap display-1 text-white">GENERE</div>
+        </a>
+      </div>
+    </div>
+
   </div>
 </div>

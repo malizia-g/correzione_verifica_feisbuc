@@ -2,38 +2,11 @@
     font-family: "the_stoothgartregular";
     src: url('./assets/fonts/The Stoothgart.ttf') format("truetype");
 }
-.row {
-    position: absolute;
-    display: flex;
-    flex-wrap: wrap;
-    border-radius: 15px;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    justify-content: center;
-    align-content: center;
-}
 
 #btn {
-    /* size */
-    /* mettere in % */
-    width: 400px;
-    height: 400px;
-    border-radius: 15px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-content: center;
-    /* bc */
-    background-image: linear-gradient(RGB(241, 243, 181), RGB(20, 80, 89));
-    background-size: cover;
-    background-attachment: fixed;
-    /* font */
-    color: rgba(255, 255, 255);
-    font-family: 'the_stoothgartregular';
-    font-size: 60px;
-    text-decoration: none;
-    text-transform: uppercase;
+    /* width: 100%;
+    height: 400px; */
 
-    cursor: pointer;
+    background-image: linear-gradient(RGB(241, 243, 181), RGB(20, 80, 89));
+    font-family: 'the_stoothgartregular';
 }
