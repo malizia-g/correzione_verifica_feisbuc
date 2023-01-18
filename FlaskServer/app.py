@@ -4,7 +4,7 @@ import pymssql
 
 from flask_cors import CORS
 
-# pip install flask matplotlib pandas pymssql flask_cors
+# pip install flask matplotlib pandas pymssql flask_cors python-dotenv
 conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',
                        user='ghebrous.davide', password='xxx123##', database='ghebrous.davide')
 

@@ -40,14 +40,14 @@ section img#bc {
 }
 
 h1 {
-    top: 105%;
+    top: 80%;
     position: absolute;
     left: 50%;
     transform: translate(-50%, -50%);
     justify-content: center;
     align-content: center;
     font-family: 'the_stoothgartregular';
-    font-size: 60px;
+    font-size: 80px;
     z-index: 30;
 }
 
