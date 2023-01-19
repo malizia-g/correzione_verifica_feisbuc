@@ -8,7 +8,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./risultato-manga.component.css']
 })
 export class RisultatoMangaComponent {
-  url: string = "https://3000-ghebr0us-otakupeak-nte3oh79yxx.ws-eu83.gitpod.io/RisultatoManga";
+  url: string = "https://3000-ghebr0us-otakupeak-lg185f3tb2t.ws-eu82.gitpod.io/RisultatoManga";
   generim!: any;
   vettoreScelte! : any
   constructor(private route: ActivatedRoute, public http : HttpClient){
