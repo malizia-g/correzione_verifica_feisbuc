@@ -4,6 +4,11 @@ import pymssql
 
 from flask_cors import CORS
 
+from os import getenv
+from dotenv import load_dotenv
+
+load_dotenv()
+
 # pip install flask matplotlib pandas pymssql flask_cors python-dotenv
 conn = pymssql.connect(server='213.140.22.237\SQLEXPRESS',
                        user='ghebrous.davide', password='xxx123##', database='ghebrous.davide')
@@ -19,21 +24,35 @@ def start():
 def home():
     return render_template('home.html')
 
-@app.route('/Register',methods=['GET', 'POST'])
-def reg(username,email,password,cpwd):
+@app.route('/Register/data',methods=['POST'])
+def reg():
     username = request.args.get("username")
     email = request.args.get("email")
     # Il controllo della password e della sua conferma lo faccio fare ad Angular tramite la form
     password = request.args.get("pwd")
-    cpwd = request.args.get("cpwd")
+    # cpwd = request.args.get("cpwd")
 
-    q = "INSERT INTO dbo.utente (username,email,pwd) VALUES (%(username)s, %(email)s, %(password)s)"
-    cursor = conn.cursor(as_dict=True)
-    cursor.execute(q, params={"u": username, "email": email, "password": password})
-    print(cursor)
-    conn.commit()
+    Cq = "SELECT * FROM utente WHERE username = %(username)s OR email = %(email)s"
+    Ccursor = conn.cursor(as_dict=True)
+    Cp = {"username": f"{username}","email": f"{email}"}
+    Ccursor.execute(Cq, Cp)
+    Cdata = Ccursor.fetchall()
 
-    return jsonify({"msg": "OKE FRATM, HO AGGIUNTO UN NUOVO UTENTE"})
+    print(Cdata)
+
+    if len(Cdata) < 1: # Se l'utente non esiste
+        print(request.args)
+        q = 'INSERT INTO utente (username, email, pwd) VALUES (%(username)s, %(email)s, %(password)s)'
+        cursor = conn.cursor(as_dict=True)
+        p = {"username": f"{username}","email": f"{email}","password": f"{password}"}
+
+        cursor.execute(q, p)
+        conn.commit()
+        return jsonify({'data': 'Ok!', 'url': 'login'})
+    else:
+        return jsonify({'data': 'User already exists!', 'url': None})
+
+# --------------------------------------------------------------------------------------------------------------
 
 # pagina contenente i tipi di ricerca che si vuole utilizzare per gli anime
 @app.route('/tipoRicercaAnime')

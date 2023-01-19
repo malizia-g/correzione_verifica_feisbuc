@@ -10,7 +10,7 @@ import { GenereAnimeComponent } from '../genere-anime/genere-anime.component';
   styleUrls: ['./risultato-anime.component.css']
 })
 export class RisultatoAnimeComponent implements OnInit{
-  url: string = "https://3000-ghebr0us-otakupeak-029z2in9ttu.ws-eu83.gitpod.io/RisultatoAnime";
+  url: string = "https://3000-ghebr0us-otakupeak-p7q3clyhc1l.ws-eu83.gitpod.io/RisultatoAnime";
   genere!: any;
   vettoreScelte! : any
   constructor(private route: ActivatedRoute, public http : HttpClient){

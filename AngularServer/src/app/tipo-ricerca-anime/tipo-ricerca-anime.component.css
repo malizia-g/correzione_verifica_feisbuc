@@ -14,10 +14,10 @@
 @media screen and (min-width: 1200px) {
     .display-1
     {
-        font-size: 100px !important
+        font-size: 120px !important
     }
 }
 
 .bkg{
-    background-color: red;
+    background-color: rgb(197,47,47);
 }

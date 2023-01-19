@@ -1,18 +1,45 @@
-<div class="hero">
-    <div class="form-box">
-        <div class="button-box">
-            <div id="btn2"></div>
-            <button type="button" class="toggle-btn"><h1>REGISTRAZIONE</h1></button>
+<div class="container py-5 h-100">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+        <div class="col-12 col-md-8 col-lg-6 col-xl-5">
+            <h1 class="text-center font-monospace">Register</h1>
+
+            <form [formGroup]="form" (ngSubmit)="submit()">
+                <!-- Username input -->
+                <div class="form-outline mb-4">
+                    <div class="form-outline mb-12">
+                        <input type="text" class="form-control input-field" id="username" placeholder="Username"
+                            name="username" formControlName="name" required>
+                    </div>
+                </div>
+
+                <!-- Email input -->
+                <div class="form-outline mb-4">
+                    <div class="form-outline mb-12">
+                        <input type="email" class="form-control input-field" id="email" placeholder="E-Mail"
+                            name="email" formControlName="email" required>
+                    </div>
+                </div>
+
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                    <div class="form-outline mb-12">
+                        <input type="password" class="form-control input-field" id="password" placeholder="Password"
+                            name="pwd" formControlName="password" required>
+                    </div>
+                </div>
+
+                <!-- Conferma Password input
+                <div class="form-outline mb-4">
+                    <div class="form-outline mb-12">
+                        <input type="password" class="form-control input-field" id="cpwd"  placeholder="Conferma Password" name="cpwd" formControlName="password" required>
+                    </div>
+                </div> -->
+
+                <!-- Submit button -->
+
+                <input class="btn " id="btn" type="submit" [routerLink]="['/login']" />
+            </form>
+
         </div>
-        <form class="input" action="/register" method = "POST">
-            <p>username <input type = "text" name = "username" class="input-field" required/></p>
-            <p>Email<input type="email" name="email" placeholder="email" class="form-control input-field" required></p>
-            <p>Password <input type = "password" name = "pwd" class="input-field" required/></p>
-            <p>Confirm Password <input type = "password" name = "cpwd" class="input-field" required/></p>
-            <p><a id="btn" type="submit" [routerLink]="['Home']">Inizia Ora!</a></p>
-            <div class="link">
-            <p><a [routerLink]="['/Login']">Hai già effettuato l'accesso?Effettua il Login!</a></p>
-            </div>
-        </form>
     </div>
 </div>
