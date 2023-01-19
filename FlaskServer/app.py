@@ -24,7 +24,7 @@ def start():
 def home():
     return render_template('home.html')
 
-@app.route('/Register/data',methods=['POST'])
+@app.route('/Register',methods=['POST'])
 def reg():
     username = request.args.get("username")
     email = request.args.get("email")
