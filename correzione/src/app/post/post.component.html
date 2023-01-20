@@ -1,4 +1,9 @@
 <div>
     Messaggio di {{post.user}}: <br>
-    {{post.message}}
+    {{post.message}} <br>
+    {{post.n_like}} - &#9753;
+</div>
+
+<div>
+<button (click)="addLike()">like</button>
 </div>

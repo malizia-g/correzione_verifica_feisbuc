@@ -10,4 +10,9 @@ export class PostComponent {
 
   @Input() post! : Post;
 
+  addLike()
+  {
+    this.post.n_like++;
+  }
+
 }
