@@ -7,3 +7,10 @@
 <div>
 <button (click)="addLike()">like</button>
 </div>
+
+<div>
+    <input type="text" #c/>
+    <button (click)="commenta(c)" >commenta</button>
+</div>
+
+<app-comment *ngFor="let c of post.commenti" [commento]="c"></app-comment>

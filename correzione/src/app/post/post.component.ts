@@ -1,3 +1,4 @@
+import { HtmlParser } from '@angular/compiler';
 import { Component, Input } from '@angular/core';
 import { Post } from '../models/post.model';
 
@@ -13,6 +14,11 @@ export class PostComponent {
   addLike()
   {
     this.post.n_like++;
+  }
+
+  commenta(c : HTMLInputElement)
+  {
+    this.post.commenti.push(c.value);
   }
 
 }
