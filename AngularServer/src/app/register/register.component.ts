@@ -10,7 +10,7 @@ import { Data } from 'src/models/redirectData.model';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent {
-  url: string = "https://3000-ghebr0us-otakupeak-p7q3clyhc1l.ws-eu83.gitpod.io/Register";
+  url: string = "https://3000-ghebr0us-otakupeak-mryq4ojvg6c.ws-eu83.gitpod.io/Register";
   form!: FormGroup;
   errorMessage!: string;
 
@@ -29,9 +29,9 @@ export class RegisterComponent {
   submit() {
     let body: HttpParams = new HttpParams();
     body = body.appendAll({
-      name: this.form.value.name,
+      username: this.form.value.username,
       email: this.form.value.email,
-      password: this.form.value.password
+      pwd: this.form.value.pwd
     });
 
     this.http.post<Data>(this.url, '', {
@@ -41,7 +41,7 @@ export class RegisterComponent {
       params: body,
       responseType: "json"
     }).subscribe(data => {
-      console.log(data.data);
+      console.log(data);
 
       if(data.url != null) {
         this.router.navigate([data.url]);

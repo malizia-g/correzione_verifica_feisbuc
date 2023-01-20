@@ -52,8 +52,44 @@ def reg():
     else:
         return jsonify({'data': 'User already exists!', 'url': None})
 
-# --------------------------------------------------------------------------------------------------------------
+# --------------------------------LOGIN----------------------------------------------------------
 
+@app.route('/Login', methods=['POST'])
+def login():
+  # Prendo gli argomenti richiesti
+  email = request.args.get('email')
+  password = request.args.get('pwd')
+
+  data = {
+    "statusCode": 200,
+    "errorMessage": "",
+    "data": {}
+  }
+
+  # Controllo se nono stati passati tutti i parametri richiesti
+  if None not in [email, password]:
+    # Prendo le informazioni dell'utente
+    q = 'SELECT * FROM utente WHERE email = %(e)s'
+    cursor = conn.cursor(as_dict=True)
+    cursor.execute(q, params={"e": email})
+    res = cursor.fetchall()
+
+    # Controllo se l'utente esiste
+    if len(res) < 1:
+      data["statusCode"] = 404
+      data["errorMessage"] = "No user was found with that email"
+    elif not (res[0]["pwd"] == password):
+      data["statusCode"] = 403
+      data["errorMessage"] = "Wrong password"
+    else:
+      data["data"] = res
+  else:
+    data['statusCode'] = 400
+    data['errorMessage'] = "No email or password provided"
+  
+  return jsonify(data)
+
+#---------------------------------------------------------------------------------------------------------------
 # pagina contenente i tipi di ricerca che si vuole utilizzare per gli anime
 @app.route('/tipoRicercaAnime')
 def tipoRiceraAnime():
