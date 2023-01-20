@@ -8,7 +8,6 @@ import { Post } from './models/post.model';
 })
 export class AppComponent {
   title = 'correzione';
-
   post_vect : Post[] = [];
 
   invia(user : HTMLInputElement, message: HTMLInputElement) 

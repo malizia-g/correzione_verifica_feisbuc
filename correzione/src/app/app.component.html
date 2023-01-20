@@ -1,3 +1,7 @@
 <input type="text" #user/> <label>user</label> <br>
 <input type="text" #message/> <label>message</label> <br>
 <button (click)="invia(user, message)">Invia</button>
+
+<hr>
+
+<app-post *ngFor="let p of post_vect" [post] = "p" ></app-post>
